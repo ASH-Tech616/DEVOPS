@@ -1,3 +1,0 @@
-# APIs & JSON - dependencies
-# requests: the de-facto HTTP client for Python
-requests>=2.31.0
