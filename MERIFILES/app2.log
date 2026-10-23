@@ -1,0 +1,64 @@
+2024-07-18 08:00:01 INFO  [Bootstrap]   - Starting application v3.2.1 (build 8842)
+2024-07-18 08:00:02 INFO  [Config]      - Loading configuration from /etc/app/config.yaml
+2024-07-18 08:00:02 INFO  [Config]      - Configuration loaded successfully (142 keys)
+2024-07-18 08:00:03 INFO  [Database]    - Connecting to PostgreSQL at 10.0.0.5:5432
+2024-07-18 08:00:03 INFO  [Database]    - Connection established (pool size: 20)
+2024-07-18 08:00:04 INFO  [Cache]       - Redis connection established at 10.0.0.6:6379
+2024-07-18 08:00:04 INFO  [AppServer]   - Listening on port 8080 (HTTPS)
+2024-07-18 08:00:05 INFO  [Scheduler]   - Cron jobs registered: 12 tasks
+2024-07-18 08:00:05 INFO  [HealthCheck] - Health check endpoint ready at /health
+2024-07-18 08:01:12 INFO  [Auth]        - User 'admin' logged in from 192.168.1.100
+2024-07-18 08:01:45 INFO  [Auth]        - User 'jdoe' logged in from 10.20.3.45
+2024-07-18 08:02:00 INFO  [API]         - GET /api/v1/users 200 (12ms)
+2024-07-18 08:02:01 INFO  [API]         - POST /api/v1/orders 201 (45ms)
+2024-07-18 08:02:15 WARNING [Auth]      - 3 failed login attempts for user 'admin' from 203.0.113.42
+2024-07-18 08:02:30 WARNING [Auth]      - 5 failed login attempts for user 'admin' from 203.0.113.42
+2024-07-18 08:02:45 ERROR   [Auth]      - Account 'admin' locked after 5 failed attempts from 203.0.113.42
+2024-07-18 08:03:00 WARNING [RateLimit] - IP 203.0.113.42 exceeded rate limit (100 req/min)
+2024-07-18 08:05:22 INFO  [API]         - GET /api/v1/products 200 (8ms)
+2024-07-18 08:05:23 INFO  [API]         - GET /api/v1/products?page=2 200 (11ms)
+2024-07-18 08:06:00 WARNING [Memory]    - Heap usage at 78% (1.56GB / 2GB)
+2024-07-18 08:06:30 WARNING [Memory]    - Heap usage at 85% (1.70GB / 2GB)
+2024-07-18 08:07:00 ERROR   [Memory]    - OutOfMemoryError: GC overhead limit exceeded in thread-42
+2024-07-18 08:07:00 ERROR   [AppServer] - Thread pool exhausted: 200/200 threads active
+2024-07-18 08:07:01 WARNING [AppServer] - Enabling emergency thread pool (50 additional threads)
+2024-07-18 08:07:05 INFO  [AppServer]   - Thread pool recovered: 120/250 threads active
+2024-07-18 08:10:12 INFO  [API]         - PUT /api/v1/orders/4521 200 (33ms)
+2024-07-18 08:10:15 WARNING [API]       - Slow query detected: SELECT * FROM orders WHERE status='pending' (2340ms)
+2024-07-18 08:10:15 INFO  [QueryOpt]    - Suggesting index on orders(status)
+2024-07-18 08:12:00 INFO  [Backup]      - Starting scheduled database backup
+2024-07-18 08:12:45 INFO  [Backup]      - Backup completed: 2.3GB in 45s
+2024-07-18 08:15:33 ERROR   [Database]  - Connection lost to PostgreSQL at 10.0.0.5:5432
+2024-07-18 08:15:34 WARNING [Database]  - Attempting reconnect (1/5)...
+2024-07-18 08:15:39 WARNING [Database]  - Attempting reconnect (2/5)...
+2024-07-18 08:15:44 INFO  [Database]    - Reconnected to PostgreSQL at 10.0.0.5:5432
+2024-07-18 08:15:44 INFO  [Database]    - Connection pool restored (18/20 active)
+2024-07-18 08:20:00 INFO  [API]         - DELETE /api/v1/sessions/expired 200 (5ms)
+2024-07-18 08:20:00 INFO  [Cleanup]     - Removed 1,247 expired sessions
+2024-07-18 08:25:10 WARNING [Disk]      - /var/log partition at 91% capacity
+2024-07-18 08:25:10 WARNING [Disk]      - /var/log partition at 93% capacity
+2024-07-18 08:30:00 INFO  [API]         - GET /api/v1/reports/monthly 200 (890ms)
+2024-07-18 08:30:01 WARNING [API]       - Response time exceeded threshold: 890ms > 500ms
+2024-07-18 08:35:22 INFO  [Auth]        - User 'jdoe' logged out from 10.20.3.45
+2024-07-18 08:40:00 INFO  [Scheduler]   - Running task: cleanup_temp_files
+2024-07-18 08:40:02 INFO  [Scheduler]   - Task completed: cleanup_temp_files (2s)
+2024-07-18 08:45:00 ERROR   [ExternalAPI] - Payment gateway timeout: POST /charge (30000ms)
+2024-07-18 08:45:01 WARNING [ExternalAPI] - Retrying payment gateway call (1/3)...
+2024-07-18 08:45:05 ERROR   [ExternalAPI] - Payment gateway timeout: POST /charge (30000ms)
+2024-07-18 08:45:06 WARNING [ExternalAPI] - Retrying payment gateway call (2/3)...
+2024-07-18 08:45:10 INFO  [ExternalAPI] - Payment gateway call succeeded on retry (2)
+2024-07-18 08:50:00 INFO  [HealthCheck] - All services healthy
+2024-07-18 08:55:00 INFO  [API]         - GET /api/v1/metrics 200 (3ms)
+2024-07-18 09:00:00 INFO  [Scheduler]   - Running task: refresh_cache
+2024-07-18 09:00:15 INFO  [Scheduler]   - Task completed: refresh_cache (15s)
+2024-07-18 09:05:33 WARNING [TLS]       - Certificate for app.example.com expires in 7 days
+2024-07-18 09:10:00 INFO  [API]         - POST /api/v1/users 201 (28ms)
+2024-07-18 09:15:00 ERROR   [FileStore] - Failed to write file: /data/uploads/img_8821.png (disk full)
+2024-07-18 09:15:01 WARNING [FileStore] - Switching to secondary storage: s3://backup-bucket
+2024-07-18 09:15:02 INFO  [FileStore]   - File written to secondary storage successfully
+2024-07-18 09:20:00 INFO  [Auth]        - User 'admin' logged out from 192.168.1.100
+2024-07-18 09:25:00 INFO  [HealthCheck] - All services healthy
+2024-07-18 09:30:00 INFO  [AppServer]   - Graceful shutdown initiated
+2024-07-18 09:30:01 INFO  [Database]    - Closing connection pool
+2024-07-18 09:30:02 INFO  [Cache]       - Closing Redis connection
+2024-07-18 09:30:02 INFO  [AppServer]   - Application stopped (uptime: 1h 30m 1s)   
